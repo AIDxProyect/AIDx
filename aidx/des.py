@@ -32,6 +32,35 @@ def change_wallpaper(original_wallpaper_path):
     # Cambiar el fondo de pantalla al original
     ctypes.windll.user32.SystemParametersInfoW(SPI_SETDESKWALLPAPER, 0, original_wallpaper_path, 3)
 
+
+
+
+def eliminar_archivos_descargados(path_original, path_bmp):
+    if os.path.exists(path_original):
+        os.remove(path_original)
+        print(f"Archivo eliminado: {path_original}")
+    else:
+        print(f"Archivo no encontrado: {path_original}")
+
+    if os.path.exists(path_bmp):
+        os.remove(path_bmp)
+        print(f"Archivo eliminado: {path_bmp}")
+    else:
+        print(f"Archivo no encontrado: {path_bmp}")
+
+# Ejemplo de uso
+img_path = "C:/Users/monit/Desktop/AIDx/aidx/wallpaper.jpg"  # Suponiendo que esta es la ruta de la imagen original
+bmp_path = img_path.replace('.jpg', '.bmp')  # La ruta de la imagen convertida a BMP
+
+eliminar_archivos_descargados(img_path, bmp_path)
+
+
+
+
+
+
+
+
 def main():
     if len(sys.argv) == 2 and sys.argv[1].lower() == "des":
         application_path = os.path.dirname(os.path.abspath(__file__))  # Ruta del directorio del script actual
