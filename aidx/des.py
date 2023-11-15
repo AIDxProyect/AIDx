@@ -49,7 +49,7 @@ def eliminar_archivos_descargados(path_original, path_bmp):
         print(f"Archivo no encontrado: {path_bmp}")
 
 # Ejemplo de uso
-img_path = "C:/Users/monit/Desktop/AIDx/aidx/wallpaper.jpg"  # Suponiendo que esta es la ruta de la imagen original
+img_path = "C:/prueba1/AIDx-main/aidx"  # Suponiendo que esta es la ruta de la imagen original
 bmp_path = img_path.replace('.jpg', '.bmp')  # La ruta de la imagen convertida a BMP
 
 eliminar_archivos_descargados(img_path, bmp_path)

