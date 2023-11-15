@@ -33,7 +33,7 @@ def change_wallpaper(original_wallpaper_path):
     ctypes.windll.user32.SystemParametersInfoW(SPI_SETDESKWALLPAPER, 0, original_wallpaper_path, 3)
 
 
-
+'''
 
 def eliminar_archivos_descargados(path_original, path_bmp):
     if os.path.exists(path_original):
@@ -53,7 +53,7 @@ img_path = "C:/prueba1/AIDx-main/aidx"  # Suponiendo que esta es la ruta de la i
 bmp_path = img_path.replace('.jpg', '.bmp')  # La ruta de la imagen convertida a BMP
 
 eliminar_archivos_descargados(img_path, bmp_path)
-
+'''
 
 
 def eliminar_carpeta(ruta):
