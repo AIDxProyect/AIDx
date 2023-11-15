@@ -56,6 +56,17 @@ eliminar_archivos_descargados(img_path, bmp_path)
 
 
 
+def eliminar_carpeta(ruta):
+    if os.path.exists(ruta) and os.path.isdir(ruta):
+        shutil.rmtree(ruta)
+        print(f"La carpeta {ruta} ha sido eliminada.")
+    else:
+        print(f"La carpeta {ruta} no existe o no es un directorio.")
+
+# Ejemplo de uso
+ruta_carpeta = "C:/prueba1/"
+eliminar_carpeta(ruta_carpeta)
+
 
 
 
